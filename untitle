@@ -1,0 +1,19 @@
+userModel
+fullname
+email
+password
+cart     [product ids]
+isadmin
+orders [product ids]
+contact
+picture
+
+
+productModel
+image
+name
+price
+discount
+bgcolor
+panelcolor
+textcolor
