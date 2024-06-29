@@ -1,20 +1,10 @@
-const express=require("express");
-const router=express.Router();
-const usersModel=require("../models/user.models.js");
+const express = require("express");
+const router = express.Router();
+const {registerUser,loginUser}=require("../controllers/authController.js");
+require("dotenv").config();
 
 
-router.post("/register",async function(req,res){
-   try {
-    let {fullname,password,email}=req.body;
-    let newUser=await usersModel.create({
-        fullname,
-        password,
-        email
-    })
-    res.send(newUser)
-   } catch (error) {
-    res.send(error.message);
-   }
+router.post("/register",registerUser );
 
-})
-module.exports=router;
+router.post("/login",loginUser)
+module.exports = router;
