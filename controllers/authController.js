@@ -51,3 +51,8 @@ module.exports.registerUser=async function (req, res) {
     })
 
   }
+
+  module.exports.logoutUser=function(req,res){
+    res.cookie("token","");
+    res.send("You have been logged out");
+  }
