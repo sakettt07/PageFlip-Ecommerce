@@ -16,7 +16,11 @@ if(process.env.MODE==="developement"){
         })
         res.status(200).send(createOwner);
     })
-
 }
+
+router.get("/admin",function(req,res){
+    let success=req.flash("success");
+    res.render("createproducts",{success});
+})
 // console.log(process.env.NODE_ENV)
 module.exports=router;
