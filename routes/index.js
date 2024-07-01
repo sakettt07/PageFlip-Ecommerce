@@ -6,4 +6,7 @@ router.get("/",function(req,res){
     let error=req.flash("error");
     res.render("index",{error});
 })
+router.get("/login", (req, res) => {
+    res.render("login"); 
+});
 module.exports=router;
